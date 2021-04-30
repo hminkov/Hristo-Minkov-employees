@@ -1,0 +1,17 @@
+MM-dd-yyyy
+dd-MM-yyyy
+yyyy-MM-dd
+MM/dd/yyyy
+dd/MM/yyyy
+yyyy/MM/dd
+dd-M-yyyy hh:mm:ss
+dd MMMM yyyy
+dd MMMM yyyy zzzz
+E, dd MMM yyyy HH:mm:ss z
+dd/MM/yy
+M/d/yy
+d/M/yy
+yy/M/d
+M-d-yy
+d-M-yy
+yy-M-yy

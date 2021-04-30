@@ -29,10 +29,16 @@ public class Team {
         LocalDate emp2EndDate = employee2.getProject().getDateTo();
         commonStartDate = getCommonStartDate(emp1StartDate, emp2StartDate);
         commonEndDate = getCommonEndDate(emp1EndDate, emp2EndDate);
-        if(commonStartDate == emp1StartDate && commonEndDate == emp1EndDate){
+        if(commonStartDate == emp1StartDate && commonEndDate == emp2EndDate){
             return 0;
         }
-        if(commonStartDate == emp2EndDate && commonEndDate == emp2EndDate){
+        if(commonStartDate == emp2EndDate && commonEndDate == emp1EndDate){
+            return 0;
+        }
+        if(emp1EndDate.compareTo(emp2StartDate) < 0){
+            return 0;
+        }
+        if(emp2EndDate.compareTo(emp1StartDate) < 0){
             return 0;
         }
         return DAYS.between(commonStartDate, commonEndDate);
@@ -45,10 +51,10 @@ public class Team {
         return emp1StartDate;
     }
 
-    private LocalDate getCommonEndDate(LocalDate emp1StartDate, LocalDate emp2StartDate){
-        if(emp1StartDate.compareTo(emp2StartDate) < 0){
-            return emp2StartDate;
+    private LocalDate getCommonEndDate(LocalDate emp1EndDate, LocalDate emp2EndDate){
+        if(emp1EndDate.compareTo(emp2EndDate) < 0){
+            return emp2EndDate;
         }
-        return emp1StartDate;
+        return emp1EndDate;
     }
 }
